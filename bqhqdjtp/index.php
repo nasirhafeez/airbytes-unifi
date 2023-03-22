@@ -49,13 +49,12 @@ if ($result->num_rows >= 1) {
     <div class="main">
         <section class="section">
             <div class="container">
-                <div id="login" class="content is-size-6 has-text-centered">Welkom bij de gratis WiFi</div>
-                <div id="login" class="content is-size-6 has-text-centered">van Casa357</div>
+                <div id="login" class="content is-size-6 has-text-centered">Please enter your details</div>
                 <br>
-                <form method="post" action="connect.php">
+                <form method="post" action="verify.php">
                     <div class="field">
                         <div class="control has-icons-left">
-                            <input class="input" type="text" name="fname" placeholder="Voornaam" required>
+                            <input class="input" type="text" id="form_font" name="fname" placeholder="First Name" required>
                             <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
                             </span>
@@ -64,7 +63,7 @@ if ($result->num_rows >= 1) {
 
                     <div class="field">
                         <div class="control has-icons-left">
-                            <input class="input" type="text" name="lname" placeholder="Achternaam" required>
+                            <input class="input" type="text" id="form_font" name="lname" placeholder="Last Name" required>
                             <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
                             </span>
@@ -73,30 +72,28 @@ if ($result->num_rows >= 1) {
 
                     <div class="field">
                         <div class="control has-icons-left">
-                            <input class="input" type="tel" name="phone" placeholder="Mobiel" required>
+                            <input class="input" type="email" id="form_font" name="email" placeholder="Email" required>
                             <span class="icon is-small is-left">
-                                <i class="fas fa-mobile"></i>
-                            </span>
+                        <i class="fas fa-envelope"></i>
+                    </span>
                         </div>
                     </div>
 
-                    <div class="field">
-                        <div class="control has-icons-left">
-                            <input class="input" type="email" name="email" placeholder="Email" required>
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-envelope"></i>
-                            </span>
-                        </div>
-                    </div>
                     <br>
+                    <div class="columns is-centered is-mobile">
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox" required>
+                                I agree to the <a href="policy.php">Terms of Use</a>
+                            </label>
+                        </div>
+                    </div>
                     <div class="buttons is-centered">
-                        <button class="button is-link">OK en gratis internet</button>
+                        <button class="button is-link">Connect</button>
                     </div>
                 </form>
                 <br>
-                <div id="login" class="content is-size-7 has-text-centered">
-                    Bij het doorgaan accepteert u de <a href="policy.php">algemene voorwaarden</a> van Casa357
-                </div>
+
             </div>
             <br>
         </section>
