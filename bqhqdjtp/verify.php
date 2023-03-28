@@ -26,7 +26,7 @@ if (!isset($_POST['verify'])) {
     ->verificationChecks
     ->create(
       $_SESSION['code'], // code
-      ["to" => $_SESSION['address']]
+      ["to" => $_SESSION['email']]
     );
 
   if ($verification_check->status == "approved") {
