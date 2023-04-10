@@ -20,12 +20,15 @@ if ($user_type == "new") {
     `lastname` varchar(45) NOT NULL,
     `phone` varchar(45) NOT NULL,
     `mac` varchar(45) NOT NULL,
+    `first_connection` varchar(45) NOT NULL,
     `last_updated` varchar(45) NOT NULL,
     PRIMARY KEY (`id`),
     UNIQUE KEY (mac)
     )");
 
-  mysqli_query($con,"INSERT INTO `$table_name` (firstname, lastname, phone, mac, last_updated) VALUES ('$fname', '$lname', '$phone', '$mac', '$last_updated')");
+  mysqli_query($con,"INSERT INTO `$table_name` (firstname, lastname, phone, mac, first_connection, last_updated) VALUES ('$fname', '$lname', '$phone', '$mac', '$last_updated', '$last_updated')");
+} else {
+  mysqli_query($con, "UPDATE `$table_name` SET last_updated = NOW() WHERE mac = '$mac'");
 }
 
 $controlleruser = $_SERVER['CONTROLLER_USER'];
